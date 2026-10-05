@@ -1,0 +1,151 @@
+transaction_id,transaction_date,billing_cycle_month,cardholder_name,employee_id,department,cost_center,merchant_name,merchant_category,transaction_amount_usd,currency_code,payment_status,card_type,region,country
+TXN-00001,2025-04-25,202504,Priya Chen,EMP-10001,Customer Support,CC-1007,Salesforce,Software,589.10,MXN,Paid,Travel Card,North America,Mexico
+TXN-00002,2025-08-12,202508,Yuki Müller,EMP-10002,IT,CC-1010,Shell,Fuel,121.66,GBP,Paid,Travel Card,EMEA,United Kingdom
+TXN-00003,2025-06-13,202506,Noah Patel,EMP-10003,Engineering,CC-1007,Salesforce,Software,569.67,MXN,Paid,Purchasing Card,LATAM,Mexico
+TXN-00004,2025-09-28,202509,David Chen,EMP-10004,Procurement,CC-1005,TopGolf,Entertainment,50.58,MXN,Pending,Virtual Card,North America,Mexico
+TXN-00005,2026-01-06,202601,Wei Müller,EMP-10005,Engineering,CC-1007,United Airlines,Airlines,2514.67,GBP,Paid,Virtual Card,EMEA,United Kingdom
+TXN-00006,2026-01-09,202601,Wei Khan,EMP-10006,Procurement,CC-1004,Uber,Transportation,83.06,EUR,Paid,Purchasing Card,EMEA,France
+TXN-00007,2025-10-04,202510,Noah Kumar,EMP-10007,Human Resources,CC-1002,United Airlines,Airlines,2661.84,EUR,Paid,Virtual Card,EMEA,France
+TXN-00008,2025-11-19,202511,Liam Kim,EMP-10008,Marketing,CC-1009,T-Mobile,Telecommunications,276.72,AED,Paid,Virtual Card,EMEA,UAE
+TXN-00009,2026-03-15,202603,Wei Garcia,EMP-10009,Engineering,CC-1003,Staples,Office Supplies,338.55,MXN,Paid,Virtual Card,LATAM,Mexico
+TXN-00010,2026-03-09,202603,Liam Smith,EMP-10010,Engineering,CC-1009,T-Mobile,Telecommunications,548.04,CAD,Pending,Virtual Card,North America,Canada
+TXN-00011,2025-12-15,202512,Liam Khan,EMP-10011,Procurement,CC-1002,AT&T,Telecommunications,274.13,CAD,Pending,Purchasing Card,North America,Canada
+TXN-00012,2026-06-04,202606,James Johnson,EMP-10012,IT,CC-1001,Uber,Transportation,68.41,EUR,Paid,Purchasing Card,EMEA,Germany
+TXN-00013,2025-11-11,202511,Wei Nguyen,EMP-10013,Engineering,CC-1009,Amazon Business,Office Supplies,616.31,GBP,Pending,Travel Card,EMEA,United Kingdom
+TXN-00014,2026-05-02,202605,Carlos Rodriguez,EMP-10014,Human Resources,CC-1007,BP,Fuel,82.12,EUR,Overdue,Virtual Card,EMEA,France
+TXN-00015,2026-01-18,202601,Wei Johnson,EMP-10015,Sales,CC-1010,AMC Theatres,Entertainment,85.65,ARS,Paid,Virtual Card,LATAM,Argentina
+TXN-00016,2025-08-14,202508,Maria Johnson,EMP-10016,Engineering,CC-1009,United Airlines,Airlines,383.55,USD,Paid,Virtual Card,North America,USA
+TXN-00017,2026-05-13,202605,Mohammed Ivanov,EMP-10017,Marketing,CC-1002,McKinsey & Co,Consulting Services,5935.72,EUR,Paid,Purchasing Card,EMEA,Germany
+TXN-00018,2025-12-29,202512,Priya Garcia,EMP-10018,Legal,CC-1006,TopGolf,Entertainment,30.44,MXN,Pending,Travel Card,LATAM,Mexico
+TXN-00019,2025-09-12,202509,Fatima Dubois,EMP-10019,IT,CC-1004,Chevron,Fuel,43.92,EUR,Pending,Travel Card,EMEA,Germany
+TXN-00020,2026-03-30,202603,Emma Khan,EMP-10020,Legal,CC-1008,Shell,Fuel,155.81,USD,Paid,Purchasing Card,North America,USA
+TXN-00021,2025-03-02,202503,Olivia Nakamura,EMP-10021,Legal,CC-1009,British Airways,Airlines,980.91,AED,Paid,Purchasing Card,EMEA,UAE
+TXN-00022,2025-06-08,202506,Maria Johnson,EMP-10022,Sales,CC-1001,Staples,Office Supplies,382.78,EUR,Paid,Virtual Card,EMEA,France
+TXN-00023,2026-06-28,202606,Wei Chen,EMP-10023,Marketing,CC-1007,Shell,Fuel,139.93,GBP,Paid,Virtual Card,EMEA,United Kingdom
+TXN-00024,2025-09-10,202509,Noah Dubois,EMP-10024,Marketing,CC-1006,InterContinental,Hotels,1618.81,MXN,Paid,Purchasing Card,North America,Mexico
+TXN-00025,2025-05-15,202505,Priya Chen,EMP-10025,Procurement,CC-1004,Uber,Transportation,9.04,JPY,Paid,Travel Card,APAC,Japan
+TXN-00026,2025-12-24,202512,Aisha Smith,EMP-10026,Procurement,CC-1005,Lyft,Transportation,25.67,USD,Overdue,Travel Card,North America,USA
+TXN-00027,2025-05-18,202505,Carlos Johnson,EMP-10027,Marketing,CC-1005,Hilton,Hotels,740.95,INR,Paid,Purchasing Card,APAC,India
+TXN-00028,2025-02-22,202502,Noah Kim,EMP-10028,Human Resources,CC-1003,Verizon,Telecommunications,67.26,MXN,Pending,Virtual Card,North America,Mexico
+TXN-00029,2026-03-14,202603,Sofia Kim,EMP-10029,Legal,CC-1003,Hilton,Hotels,1363.95,USD,Paid,Purchasing Card,North America,USA
+TXN-00030,2025-02-10,202502,Yuki Kim,EMP-10030,Marketing,CC-1003,Amazon Business,Office Supplies,80.27,SGD,Overdue,Travel Card,APAC,Singapore
+TXN-00031,2026-02-27,202602,Emma Dubois,EMP-10031,Finance,CC-1002,Lyft,Transportation,97.85,USD,Paid,Travel Card,North America,USA
+TXN-00032,2026-04-27,202604,Emma Müller,EMP-10032,Sales,CC-1004,Live Nation,Entertainment,101.98,EUR,Paid,Purchasing Card,EMEA,Germany
+TXN-00033,2025-03-13,202503,Noah Smith,EMP-10033,Engineering,CC-1005,Chevron,Fuel,116.73,AUD,Paid,Purchasing Card,APAC,Australia
+TXN-00034,2025-02-09,202502,Noah Ivanov,EMP-10034,Customer Support,CC-1009,Verizon,Telecommunications,412.92,MXN,Paid,Virtual Card,North America,Mexico
+TXN-00035,2025-07-14,202507,Carlos Silva,EMP-10035,Legal,CC-1002,AT&T,Telecommunications,307.56,INR,Overdue,Purchasing Card,APAC,India
+TXN-00036,2025-11-18,202511,Yuki Johnson,EMP-10036,Legal,CC-1005,Atlassian,Software,800.84,MXN,Paid,Travel Card,North America,Mexico
+TXN-00037,2026-03-07,202603,James Nakamura,EMP-10037,Human Resources,CC-1004,Local Bistro,Dining,77.84,ARS,Paid,Virtual Card,LATAM,Argentina
+TXN-00038,2025-11-26,202511,Mohammed Khan,EMP-10038,Engineering,CC-1005,TopGolf,Entertainment,75.90,MXN,Paid,Virtual Card,LATAM,Mexico
+TXN-00039,2025-12-10,202512,John Smith,EMP-10039,Sales,CC-1004,Salesforce,Software,2024.14,USD,Overdue,Virtual Card,North America,USA
+TXN-00040,2025-03-16,202503,David Nguyen,EMP-10040,Legal,CC-1004,Deloitte,Consulting Services,8760.98,MXN,Paid,Virtual Card,LATAM,Mexico
+TXN-00041,2025-01-06,202501,Olivia Garcia,EMP-10041,Procurement,CC-1004,Staples,Office Supplies,525.61,CAD,Overdue,Travel Card,North America,Canada
+TXN-00042,2026-04-13,202604,Olivia Ivanov,EMP-10042,Procurement,CC-1008,BP,Fuel,105.39,AED,Pending,Virtual Card,EMEA,UAE
+TXN-00043,2026-05-02,202605,Mohammed Müller,EMP-10043,Human Resources,CC-1008,Amazon Business,Office Supplies,191.09,MXN,Paid,Purchasing Card,LATAM,Mexico
+TXN-00044,2025-08-29,202508,John Müller,EMP-10044,Legal,CC-1003,Yellow Cab Co,Transportation,17.02,AUD,Pending,Travel Card,APAC,Australia
+TXN-00045,2026-03-01,202603,Carlos Ivanov,EMP-10045,Legal,CC-1010,Chevron,Fuel,81.13,MXN,Overdue,Travel Card,LATAM,Mexico
+TXN-00046,2026-08-13,202608,David Ivanov,EMP-10046,Procurement,CC-1009,American Airlines,Airlines,1081.81,MXN,Pending,Travel Card,LATAM,Mexico
+TXN-00047,2026-05-15,202605,Noah Kumar,EMP-10047,Finance,CC-1008,Verizon,Telecommunications,59.66,EUR,Overdue,Virtual Card,EMEA,France
+TXN-00048,2026-07-01,202607,Wei Ivanov,EMP-10048,Finance,CC-1008,McKinsey & Co,Consulting Services,8124.50,CAD,Paid,Purchasing Card,North America,Canada
+TXN-00049,2026-01-24,202601,David Dubois,EMP-10049,Legal,CC-1005,Live Nation,Entertainment,111.19,SGD,Pending,Purchasing Card,APAC,Singapore
+TXN-00050,2025-01-20,202501,Maria Smith,EMP-10050,Marketing,CC-1004,Amazon Business,Office Supplies,58.57,CAD,Pending,Virtual Card,North America,Canada
+TXN-00051,2025-06-06,202506,Carlos Rossi,EMP-10051,Human Resources,CC-1006,TopGolf,Entertainment,47.60,EUR,Paid,Virtual Card,EMEA,Germany
+TXN-00052,2025-04-28,202504,David Kumar,EMP-10052,Marketing,CC-1002,Marriott,Hotels,2237.86,EUR,Paid,Virtual Card,EMEA,France
+TXN-00053,2025-09-06,202509,Maria Silva,EMP-10053,Procurement,CC-1007,Atlassian,Software,2021.60,MXN,Paid,Travel Card,North America,Mexico
+TXN-00054,2026-06-03,202606,Sofia Rossi,EMP-10054,Finance,CC-1007,Verizon,Telecommunications,98.30,INR,Paid,Virtual Card,APAC,India
+TXN-00055,2025-10-04,202510,Noah Müller,EMP-10055,Engineering,CC-1005,T-Mobile,Telecommunications,344.20,MXN,Pending,Travel Card,LATAM,Mexico
+TXN-00056,2026-04-21,202604,Fatima Nguyen,EMP-10056,Marketing,CC-1006,British Airways,Airlines,2749.88,MXN,Pending,Purchasing Card,LATAM,Mexico
+TXN-00057,2025-10-14,202510,Yuki Nguyen,EMP-10057,Procurement,CC-1004,Shell,Fuel,36.56,INR,Paid,Virtual Card,APAC,India
+TXN-00058,2026-05-18,202605,Emma Nakamura,EMP-10058,Customer Support,CC-1006,Hyatt,Hotels,625.24,BRL,Paid,Virtual Card,LATAM,Brazil
+TXN-00059,2025-12-19,202512,Olivia Dubois,EMP-10059,Human Resources,CC-1005,Chevron,Fuel,72.49,ARS,Paid,Virtual Card,LATAM,Argentina
+TXN-00060,2025-07-17,202507,Carlos Nguyen,EMP-10060,Human Resources,CC-1010,BP,Fuel,50.00,INR,Overdue,Virtual Card,APAC,India
+TXN-00061,2025-10-17,202510,Aisha Smith,EMP-10061,Procurement,CC-1003,Salesforce,Software,927.77,USD,Paid,Travel Card,North America,USA
+TXN-00062,2026-07-21,202607,Aisha Nguyen,EMP-10062,IT,CC-1008,AMC Theatres,Entertainment,263.73,SGD,Paid,Travel Card,APAC,Singapore
+TXN-00063,2025-09-16,202509,Maria Kim,EMP-10063,Finance,CC-1010,InterContinental,Hotels,1241.18,BRL,Overdue,Travel Card,LATAM,Brazil
+TXN-00064,2025-09-12,202509,Emma Kumar,EMP-10064,IT,CC-1008,T-Mobile,Telecommunications,346.04,MXN,Paid,Virtual Card,North America,Mexico
+TXN-00065,2026-03-16,202603,Carlos Rodriguez,EMP-10065,Human Resources,CC-1002,McKinsey & Co,Consulting Services,1641.19,INR,Paid,Travel Card,APAC,India
+TXN-00066,2026-07-20,202607,Mohammed Nakamura,EMP-10066,Sales,CC-1004,British Airways,Airlines,1540.52,USD,Paid,Purchasing Card,North America,USA
+TXN-00067,2026-04-10,202604,Carlos Ivanov,EMP-10067,Engineering,CC-1009,Office Depot,Office Supplies,515.27,MXN,Paid,Travel Card,North America,Mexico
+TXN-00068,2025-09-30,202509,Aisha Rossi,EMP-10068,Engineering,CC-1008,United Airlines,Airlines,2573.74,GBP,Paid,Virtual Card,EMEA,United Kingdom
+TXN-00069,2026-02-17,202602,Yuki Johnson,EMP-10069,Customer Support,CC-1005,AMC Theatres,Entertainment,185.44,JPY,Paid,Travel Card,APAC,Japan
+TXN-00070,2026-08-13,202608,Fatima Nguyen,EMP-10070,Procurement,CC-1008,Atlassian,Software,138.97,MXN,Overdue,Travel Card,North America,Mexico
+TXN-00071,2026-03-23,202603,Noah Patel,EMP-10071,Finance,CC-1006,Live Nation,Entertainment,131.38,BRL,Paid,Purchasing Card,LATAM,Brazil
+TXN-00072,2025-10-23,202510,Liam Johnson,EMP-10072,Engineering,CC-1007,British Airways,Airlines,445.94,ARS,Pending,Travel Card,LATAM,Argentina
+TXN-00073,2026-07-10,202607,Mohammed Rossi,EMP-10073,Sales,CC-1004,United Airlines,Airlines,1745.69,MXN,Paid,Travel Card,LATAM,Mexico
+TXN-00074,2025-10-22,202510,Emma Khan,EMP-10074,Human Resources,CC-1009,AMC Theatres,Entertainment,23.23,ARS,Paid,Purchasing Card,LATAM,Argentina
+TXN-00075,2025-04-06,202504,John Nguyen,EMP-10075,Human Resources,CC-1009,AMC Theatres,Entertainment,199.60,GBP,Pending,Purchasing Card,EMEA,United Kingdom
+TXN-00076,2026-05-10,202605,Carlos Kim,EMP-10076,Engineering,CC-1005,TopGolf,Entertainment,56.22,BRL,Pending,Purchasing Card,LATAM,Brazil
+TXN-00077,2025-12-15,202512,Mohammed Kim,EMP-10077,IT,CC-1009,Adobe,Software,2100.19,INR,Paid,Purchasing Card,APAC,India
+TXN-00078,2026-07-20,202607,Emma Kumar,EMP-10078,Marketing,CC-1007,Uber,Transportation,117.85,MXN,Paid,Virtual Card,LATAM,Mexico
+TXN-00079,2026-04-30,202604,John Johnson,EMP-10079,Engineering,CC-1008,The Capital Grille,Dining,173.95,MXN,Paid,Purchasing Card,LATAM,Mexico
+TXN-00080,2025-01-16,202501,Liam Johnson,EMP-10080,Customer Support,CC-1007,Starbucks,Dining,88.75,AED,Paid,Purchasing Card,EMEA,UAE
+TXN-00081,2026-07-01,202607,Wei Müller,EMP-10081,Human Resources,CC-1004,TopGolf,Entertainment,25.23,MXN,Pending,Purchasing Card,LATAM,Mexico
+TXN-00082,2025-04-11,202504,Maria Johnson,EMP-10082,Sales,CC-1005,Local Bistro,Dining,163.39,CAD,Paid,Purchasing Card,North America,Canada
+TXN-00083,2025-05-30,202505,Fatima Khan,EMP-10083,Engineering,CC-1010,McKinsey & Co,Consulting Services,9613.97,AED,Pending,Virtual Card,EMEA,UAE
+TXN-00084,2025-09-04,202509,Liam Rossi,EMP-10084,Human Resources,CC-1001,Chipotle,Dining,87.32,ARS,Pending,Purchasing Card,LATAM,Argentina
+TXN-00085,2025-10-22,202510,Aisha Ivanov,EMP-10085,Human Resources,CC-1008,Live Nation,Entertainment,296.48,GBP,Pending,Travel Card,EMEA,United Kingdom
+TXN-00086,2026-01-29,202601,Aisha Nakamura,EMP-10086,Sales,CC-1007,Office Depot,Office Supplies,378.17,BRL,Paid,Virtual Card,LATAM,Brazil
+TXN-00087,2025-02-20,202502,Emma Rodriguez,EMP-10087,Customer Support,CC-1005,Amazon Business,Office Supplies,524.23,MXN,Paid,Virtual Card,LATAM,Mexico
+TXN-00088,2025-05-21,202505,Maria Silva,EMP-10088,Finance,CC-1002,American Airlines,Airlines,2561.60,MXN,Overdue,Purchasing Card,North America,Mexico
+TXN-00089,2026-03-02,202603,Liam Khan,EMP-10089,Human Resources,CC-1008,Local Bistro,Dining,99.31,EUR,Overdue,Purchasing Card,EMEA,Germany
+TXN-00090,2025-12-13,202512,Emma Kumar,EMP-10090,Procurement,CC-1006,Hilton,Hotels,1839.47,CAD,Paid,Purchasing Card,North America,Canada
+TXN-00091,2025-01-15,202501,Liam Kumar,EMP-10091,Operations,CC-1002,Live Nation,Entertainment,206.76,INR,Paid,Purchasing Card,APAC,India
+TXN-00092,2025-01-26,202501,Aisha Ivanov,EMP-10092,Engineering,CC-1003,InterContinental,Hotels,2193.40,SGD,Paid,Travel Card,APAC,Singapore
+TXN-00093,2025-11-08,202511,John Kumar,EMP-10093,IT,CC-1006,Hilton,Hotels,2142.95,BRL,Paid,Virtual Card,LATAM,Brazil
+TXN-00094,2026-07-08,202607,Mohammed Ivanov,EMP-10094,Human Resources,CC-1001,The Capital Grille,Dining,120.65,ARS,Paid,Travel Card,LATAM,Argentina
+TXN-00095,2026-03-31,202603,Sofia Silva,EMP-10095,Sales,CC-1007,Uber,Transportation,117.86,BRL,Paid,Travel Card,LATAM,Brazil
+TXN-00096,2026-04-11,202604,James Garcia,EMP-10096,Operations,CC-1004,Amazon Business,Office Supplies,421.08,MXN,Overdue,Virtual Card,North America,Mexico
+TXN-00097,2025-07-30,202507,Emma Johnson,EMP-10097,Finance,CC-1010,Amazon Business,Office Supplies,152.13,MXN,Paid,Travel Card,North America,Mexico
+TXN-00098,2025-05-14,202505,Sofia Müller,EMP-10098,Customer Support,CC-1006,Marriott,Hotels,420.51,SGD,Paid,Purchasing Card,APAC,Singapore
+TXN-00099,2025-02-23,202502,Mohammed Rossi,EMP-10099,Operations,CC-1009,Shell,Fuel,125.66,AED,Paid,Purchasing Card,EMEA,UAE
+TXN-00100,2026-05-31,202605,James Garcia,EMP-10100,IT,CC-1007,Chevron,Fuel,86.84,GBP,Paid,Travel Card,EMEA,United Kingdom
+TXN-00101,2026-05-18,202605,Wei Kim,EMP-10101,Human Resources,CC-1010,Hyatt,Hotels,1506.92,BRL,Paid,Virtual Card,LATAM,Brazil
+TXN-00102,2025-11-29,202511,Yuki Patel,EMP-10102,Engineering,CC-1009,Chevron,Fuel,86.25,ARS,Pending,Travel Card,LATAM,Argentina
+TXN-00103,2026-03-17,202603,David Ivanov,EMP-10103,Engineering,CC-1006,Verizon,Telecommunications,462.85,BRL,Paid,Virtual Card,LATAM,Brazil
+TXN-00104,2025-09-19,202509,Wei Chen,EMP-10104,Legal,CC-1002,AMC Theatres,Entertainment,41.00,SGD,Pending,Purchasing Card,APAC,Singapore
+TXN-00105,2025-05-14,202505,Priya Ivanov,EMP-10105,Operations,CC-1007,BP,Fuel,69.50,MXN,Pending,Virtual Card,North America,Mexico
+TXN-00106,2025-02-22,202502,Carlos Kim,EMP-10106,IT,CC-1004,Uber,Transportation,72.73,AUD,Pending,Purchasing Card,APAC,Australia
+TXN-00107,2026-07-24,202607,Yuki Smith,EMP-10107,Customer Support,CC-1005,Atlassian,Software,596.35,INR,Paid,Purchasing Card,APAC,India
+TXN-00108,2025-11-13,202511,David Chen,EMP-10108,Finance,CC-1001,United Airlines,Airlines,2806.99,AUD,Paid,Virtual Card,APAC,Australia
+TXN-00109,2025-08-09,202508,Aisha Johnson,EMP-10109,Customer Support,CC-1010,Live Nation,Entertainment,59.86,MXN,Paid,Travel Card,LATAM,Mexico
+TXN-00110,2025-06-09,202506,Yuki Nguyen,EMP-10110,Customer Support,CC-1008,Hyatt,Hotels,1130.30,GBP,Paid,Travel Card,EMEA,United Kingdom
+TXN-00111,2026-06-09,202606,Mohammed Nakamura,EMP-10111,Sales,CC-1004,AT&T,Telecommunications,188.04,CAD,Paid,Virtual Card,North America,Canada
+TXN-00112,2025-02-26,202502,Liam Nakamura,EMP-10112,Operations,CC-1002,Salesforce,Software,1927.68,USD,Paid,Virtual Card,North America,USA
+TXN-00113,2026-03-17,202603,Sofia Chen,EMP-10113,Legal,CC-1001,T-Mobile,Telecommunications,400.35,EUR,Paid,Purchasing Card,EMEA,Germany
+TXN-00114,2025-03-21,202503,Yuki Nakamura,EMP-10114,Engineering,CC-1007,Accenture,Consulting Services,8659.24,JPY,Paid,Purchasing Card,APAC,Japan
+TXN-00115,2025-06-25,202506,Priya Müller,EMP-10115,Legal,CC-1010,Uber,Transportation,56.91,ARS,Paid,Travel Card,LATAM,Argentina
+TXN-00116,2026-02-10,202602,Wei Patel,EMP-10116,Procurement,CC-1009,Office Depot,Office Supplies,509.74,AUD,Paid,Purchasing Card,APAC,Australia
+TXN-00117,2025-12-26,202512,Fatima Kim,EMP-10117,Engineering,CC-1003,Hilton,Hotels,703.61,EUR,Overdue,Virtual Card,EMEA,Germany
+TXN-00118,2026-05-21,202605,Noah Johnson,EMP-10118,Finance,CC-1008,Accenture,Consulting Services,8333.04,ARS,Paid,Purchasing Card,LATAM,Argentina
+TXN-00119,2025-11-07,202511,Olivia Rossi,EMP-10119,Sales,CC-1001,Yellow Cab Co,Transportation,16.31,INR,Paid,Purchasing Card,APAC,India
+TXN-00120,2025-03-20,202503,Maria Rossi,EMP-10120,Customer Support,CC-1004,McKinsey & Co,Consulting Services,4921.55,MXN,Paid,Purchasing Card,North America,Mexico
+TXN-00121,2026-05-29,202605,Noah Chen,EMP-10121,Procurement,CC-1003,AMC Theatres,Entertainment,246.13,GBP,Paid,Virtual Card,EMEA,United Kingdom
+TXN-00122,2026-03-25,202603,Sofia Nakamura,EMP-10122,Legal,CC-1007,BP,Fuel,46.43,ARS,Pending,Virtual Card,LATAM,Argentina
+TXN-00123,2025-02-23,202502,David Nakamura,EMP-10123,Human Resources,CC-1010,Uber,Transportation,70.49,INR,Pending,Purchasing Card,APAC,India
+TXN-00124,2025-03-25,202503,Wei Nakamura,EMP-10124,Procurement,CC-1007,Slack,Software,357.22,EUR,Paid,Purchasing Card,EMEA,France
+TXN-00125,2025-05-11,202505,Sofia Nakamura,EMP-10125,Finance,CC-1004,T-Mobile,Telecommunications,227.72,MXN,Paid,Purchasing Card,North America,Mexico
+TXN-00126,2025-07-16,202507,Priya Garcia,EMP-10126,Operations,CC-1010,Starbucks,Dining,58.88,EUR,Paid,Purchasing Card,EMEA,Germany
+TXN-00127,2025-06-07,202506,Maria Ivanov,EMP-10127,Operations,CC-1004,Deloitte,Consulting Services,8793.60,EUR,Overdue,Virtual Card,EMEA,Germany
+TXN-00128,2025-10-19,202510,Mohammed Rodriguez,EMP-10128,Operations,CC-1010,Shell,Fuel,66.78,BRL,Overdue,Purchasing Card,LATAM,Brazil
+TXN-00129,2025-10-16,202510,Carlos Kim,EMP-10129,Human Resources,CC-1001,Chevron,Fuel,155.45,ARS,Paid,Purchasing Card,LATAM,Argentina
+TXN-00130,2026-07-22,202607,Fatima Dubois,EMP-10130,IT,CC-1009,Shell,Fuel,63.48,MXN,Paid,Purchasing Card,North America,Mexico
+TXN-00131,2025-04-04,202504,David Silva,EMP-10131,Marketing,CC-1007,Uber,Transportation,54.47,AED,Overdue,Purchasing Card,EMEA,UAE
+TXN-00132,2025-08-18,202508,John Garcia,EMP-10132,Human Resources,CC-1008,Hyatt,Hotels,1924.35,CAD,Paid,Travel Card,North America,Canada
+TXN-00133,2026-04-26,202604,Carlos Kim,EMP-10133,Procurement,CC-1010,Delta Air Lines,Airlines,237.39,ARS,Paid,Travel Card,LATAM,Argentina
+TXN-00134,2025-10-23,202510,Olivia Chen,EMP-10134,Engineering,CC-1008,Marriott,Hotels,663.64,EUR,Paid,Travel Card,EMEA,France
+TXN-00135,2026-06-12,202606,Sofia Müller,EMP-10135,Customer Support,CC-1007,Slack,Software,43.85,EUR,Paid,Virtual Card,EMEA,Germany
+TXN-00136,2025-03-29,202503,James Kumar,EMP-10136,IT,CC-1001,BP,Fuel,93.49,INR,Paid,Purchasing Card,APAC,India
+TXN-00137,2025-09-17,202509,Priya Johnson,EMP-10137,Finance,CC-1001,Hyatt,Hotels,669.77,CAD,Paid,Purchasing Card,North America,Canada
+TXN-00138,2025-06-29,202506,John Chen,EMP-10138,IT,CC-1001,TopGolf,Entertainment,66.95,ARS,Paid,Travel Card,LATAM,Argentina
+TXN-00139,2025-07-24,202507,Mohammed Dubois,EMP-10139,Sales,CC-1004,Atlassian,Software,1019.63,CAD,Paid,Travel Card,North America,Canada
+TXN-00140,2025-12-06,202512,Olivia Kumar,EMP-10140,Operations,CC-1003,Lyft,Transportation,107.62,INR,Paid,Purchasing Card,APAC,India
+TXN-00141,2026-01-12,202601,Fatima Nakamura,EMP-10141,Operations,CC-1002,AT&T,Telecommunications,262.46,INR,Paid,Virtual Card,APAC,India
+TXN-00142,2025-10-30,202510,Olivia Silva,EMP-10142,IT,CC-1001,McKinsey & Co,Consulting Services,5400.33,JPY,Pending,Purchasing Card,APAC,Japan
+TXN-00143,2026-03-22,202603,Fatima Smith,EMP-10143,Finance,CC-1010,InterContinental,Hotels,948.35,INR,Paid,Purchasing Card,APAC,India
+TXN-00144,2025-02-05,202502,David Garcia,EMP-10144,Customer Support,CC-1003,Amazon Business,Office Supplies,247.62,GBP,Paid,Purchasing Card,EMEA,United Kingdom
+TXN-00145,2026-01-16,202601,David Johnson,EMP-10145,Human Resources,CC-1004,Deloitte,Consulting Services,6588.79,BRL,Overdue,Travel Card,LATAM,Brazil
+TXN-00146,2025-07-10,202507,Liam Rossi,EMP-10146,Marketing,CC-1010,T-Mobile,Telecommunications,104.47,ARS,Paid,Purchasing Card,LATAM,Argentina
+TXN-00147,2025-07-24,202507,Olivia Chen,EMP-10147,Operations,CC-1006,InterContinental,Hotels,513.66,USD,Pending,Virtual Card,North America,USA
+TXN-00148,2026-07-10,202607,Emma Patel,EMP-10148,Marketing,CC-1003,Chipotle,Dining,144.52,AUD,Paid,Purchasing Card,APAC,Australia
+TXN-00149,2025-01-27,202501,Wei Chen,EMP-10149,Human Resources,CC-1007,TopGolf,Entertainment,51.98,AUD,Overdue,Virtual Card,APAC,Australia
+TXN-00150,2026-05-06,202605,Noah Chen,EMP-10150,IT,CC-1008,Deloitte,Consulting Services,1941.26,MXN,Paid,Purchasing Card,LATAM,Mexico

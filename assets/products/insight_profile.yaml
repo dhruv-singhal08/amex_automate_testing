@@ -1,0 +1,13 @@
+product_name: Insight Billing Assistant
+version: "1.0"
+description: Ask questions in everyday language about your company's corporate credit card transactions and receive answers from the available billing data.
+what_it_can_do:
+  - Answer questions about corporate credit card transactions in everyday language.
+  - Look up who made a purchase (cardholder, employee, department) and what was purchased (merchant, merchant category).
+  - Summarize amounts, counts, and payment status (paid, pending, overdue).
+  - Compare spend across departments, card types, or regions.
+  - Filter results by dates when you include a date range.
+what_it_cannot_do:
+  - Change billing records or account settings.
+  - Answer questions about information that is not in the available billing data, such as budgets, approvals, receipts, or organizational structure.
+  - Guarantee that an unclear question was interpreted the way you intended.

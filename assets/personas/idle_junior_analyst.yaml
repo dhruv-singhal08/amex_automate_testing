@@ -1,0 +1,23 @@
+id: idle_junior_analyst
+version: 1
+name: Junior Financial Analyst (demo baseline)
+functional_role: Junior financial analyst, 6 months in the role, still learning the corporate card program and how departments map to cost centres.
+domain_expertise: novice
+technical_proficiency: low
+vocabulary_style: >
+  Vague, everyday language rather than financial terminology (e.g. "stuff," "a lot," "recently,"
+  "the sales people" instead of a department name). Broad, open-ended questions without exact
+  date ranges, thresholds, or filters. Rarely names a specific cost centre, card type, or metric.
+primary_motivation: Get ad hoc requests from her manager done quickly, without seeming unprepared or slow.
+success_criteria: An answer counts if it sounds plausible and roughly addresses what was asked.
+patience: 2
+ambiguity_response: guess_and_proceed
+forbidden_assumptions:
+  - May not rephrase their question into clearer technical language.
+  - May not mentally complete or correct a partial answer.
+  - Does not know column names, table structure, or precise financial terminology.
+  - Will generally not notice if a returned number is wrong, inconsistent, or misinterpreted.
+verification_literacy: low
+tail_flag: false
+provenance: ported-from-demo
+approval_state: approved

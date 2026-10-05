@@ -1,0 +1,16 @@
+# Business term -> definition. Optional asset: the loader returns an empty
+# glossary if this file is absent.
+#
+# Privileged, like the schema and few-shots: reaches the question generator,
+# reference validator and judge only. Never a persona or a product-facing message.
+terms:
+  spend: The sum of transaction_amount_usd. Unless a question says otherwise, spend means the US dollar amount, not the original currency.
+  travel spend: Spend where merchant_category is Airlines or Hotels. Transportation is sometimes included; treat that as an acceptable alternative.
+  T&E: Travel and entertainment. Covers merchant_category values Airlines, Hotels, Dining and Entertainment.
+  billing period: A billing cycle identified by billing_cycle_month in YYYYMM form. Distinct from the posting date in transaction_date.
+  outstanding: Charges whose payment_status is Pending or Overdue, that is, anything not yet Paid.
+  overdue: Charges whose payment_status is Overdue specifically. Narrower than outstanding.
+  cost centre: The accounting code in cost_center that spend is attributed to. Not the same as department, though they often align.
+  cardholder: The employee named in cardholder_name who made the purchase.
+  top spender: The cardholder or department with the highest summed transaction_amount_usd over the period in question.
+  transaction count: A count of rows, not a sum of amounts. "How many charges" means count; "how much" means sum.

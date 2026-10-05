@@ -1,0 +1,20 @@
+product_name: Insight API (Demo Baseline)
+version: "1.0"
+description: >
+  A natural-language question-answering tool for corporate credit card billing data.
+  You type a question in plain English, and it is translated into a single read-only
+  query against the billing data, with the result returned as a table.
+what_it_can_do:
+  - Answer questions about a single table of corporate credit card transactions, one row per transaction.
+  - Look up who made a purchase (cardholder, employee, department, cost centre).
+  - Look up what was purchased (merchant name, merchant category).
+  - Look up how much and in what state (amount, currency, payment status).
+  - Look up card and geography context (card type, region, country).
+  - Check spend totals, find large or overdue charges, and compare spend across departments or time periods.
+what_it_cannot_do:
+  - No forecasting or predictive analytics — historical data only, no projections of future spend or budgets.
+  - No writes — read-only; cannot create, update, delete, or correct any transaction.
+  - No live or point-in-time currency conversion between currencies.
+  - No data outside the billing table — no budgets, approvals, receipts, or org-chart information.
+  - No joins to HR, procurement, or general ledger systems.
+  - Results are capped at 100 rows per query, so very broad requests may be truncated.

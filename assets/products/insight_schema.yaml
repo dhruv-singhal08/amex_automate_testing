@@ -1,0 +1,57 @@
+# Structure derived from mock_product/data/schema.sql.
+# Descriptions are plain business language: they are read by the question
+# generator, the reference validator and the judge. They never reach a persona.
+# schema_version is derived as a stable content hash by SchemaSpec; it is left
+# unset here so it cannot drift out of sync with the content below.
+product_version: "1.0"
+tables:
+  - name: credit_card_billing
+    description: >
+      One row per corporate credit card transaction. Everything the product can
+      answer comes from this single table - there are no other tables to join to.
+    columns:
+      - name: transaction_id
+        type: VARCHAR
+        description: Unique identifier for a single transaction.
+      - name: transaction_date
+        type: DATE
+        description: The date the transaction posted. Use this for any question about when spending happened.
+      - name: billing_cycle_month
+        type: VARCHAR(6)
+        description: The billing cycle the transaction belongs to, written as YYYYMM. Use this when a question is about a statement or billing period rather than a posting date.
+      - name: cardholder_name
+        type: VARCHAR
+        description: Name of the employee who holds the card and made the purchase.
+      - name: employee_id
+        type: VARCHAR
+        description: Internal employee identifier for the cardholder.
+      - name: department
+        type: VARCHAR
+        description: The department the cardholder belongs to, such as Sales, Engineering, Marketing or Finance.
+      - name: cost_center
+        type: VARCHAR
+        description: Accounting cost centre code the spend is attributed to.
+      - name: merchant_name
+        type: VARCHAR
+        description: The business the money was paid to, such as United Airlines, Marriott or Salesforce.
+      - name: merchant_category
+        type: VARCHAR
+        description: The kind of purchase, such as Airlines, Hotels, Dining, Office Supplies or Software. Use this for questions about types of spend like travel or software.
+      - name: transaction_amount_usd
+        type: DECIMAL
+        description: The amount of the transaction converted to US dollars. This is the figure to sum or average for any spend total.
+      - name: currency_code
+        type: VARCHAR
+        description: The currency the transaction was originally made in. Informational only - amounts are not recalculated between currencies.
+      - name: payment_status
+        type: VARCHAR
+        description: Whether the charge is Paid, Pending or Overdue.
+      - name: card_type
+        type: VARCHAR
+        description: The kind of card used - Travel Card, Purchasing Card or Virtual Card.
+      - name: region
+        type: VARCHAR
+        description: Business region the spend belongs to, such as North America, EMEA, APAC or LATAM.
+      - name: country
+        type: VARCHAR
+        description: Country where the transaction took place.

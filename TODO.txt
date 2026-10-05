@@ -1,0 +1,201 @@
+SYNTHETIC USER PLATFORM - PLANNED WORK
+Written 2026-09-16. Nothing below has been implemented yet.
+
+
+================================================================================
+WHERE THINGS STAND (so this can be picked up cold)
+================================================================================
+
+Working and verified:
+  - Prompt library consolidated in prompts/, loaded via core/prompts.py.
+    Active: generate_v2, turn_decision_v2, closing_summary_v2, classify_v2,
+    nl_to_sql_v1 (product-owned, deliberately held steady).
+  - Persona schema carries typical_tasks / example_utterances / constraints.
+    Persona.character_sheet() strips harness bookkeeping before prompting.
+  - Langfuse tracing, optional extra, off unless keys present. 8 call sites,
+    all marked "# tracing". tests/conftest.py keeps pytest out of Langfuse.
+  - 51 tests passing.
+
+Known-bad data:
+  - Runs recorded before the ConversationState transcript fix are untrustworthy
+    (personas decided against blank replies). Re-run anything you want to trust.
+
+
+================================================================================
+PART 1 - CLARIFICATION QUESTIONS        [do first]
+================================================================================
+
+WHY FIRST: this is not just a missing feature. It corrupts a live metric today.
+
+  If the product asks "which department?" and the user answers "marketing",
+  that is a more-precise follow-up after a non-answer - which is exactly what
+  classify_v2.md defines as cleanup_suspected. So a product that asks GOOD
+  clarifying questions gets penalised, and cleanup_rate stops meaning what it
+  says.
+
+Three more conflicts:
+  - ambiguity_response is the wrong axis. It describes reacting to an ambiguous
+    ANSWER. A "stop" persona (finance_controller) would abandon when asked a
+    perfectly reasonable direct question. Real impatient users answer it, tersely.
+  - Metrics cannot tell clarifying from flailing. median_turns_to_resolution
+    rises either way. One smart question and three rounds of confusion look
+    identical.
+  - Cannot be tested yet. mock_product/engine.py has exactly five statuses:
+    OK, EMPTY, REFUSED, SQL_ERROR, LLM_ERROR. A CLARIFY path is a prerequisite.
+
+DESIGN
+  Detection - combine two sources, reject the third:
+    - Persona declares it: new TurnDecision field. Zero extra LLM calls (same
+      call, one more output field) and it captures the USER'S PERCEPTION of
+      being asked, which is what realism depends on.  <- primary
+    - Adapter declares it: optional AdapterResponse field. Authoritative when
+      the product returns a structured signal. Use as override.
+    - Separate classifier call: REJECTED. Doubles per-turn cost for something
+      the persona already knows.
+
+  Fan-out:
+    - turn_decision prompt: answering a direct question is normal user
+      behaviour, NOT repair. But still may not invent anything on
+      forbidden_assumptions - a user who genuinely does not know the currency
+      says "I don't know", which is itself a good signal.
+    - classify prompt: exclude precision supplied ON REQUEST from
+      cleanup_suspected.
+    - Conversation model: clarification turn counter.
+    - Metrics: clarification_rate; split turns-to-resolution by whether
+      clarification occurred.
+    - mock_product: CLARIFY status so this is testable at all.
+
+OPEN DECISIONS
+  [ ] Do clarification turns consume patience?
+      Realistic: yes. But then a clarifying product looks worse on abandonment.
+      Lean: consume it (stay realistic), separate it in metrics so both are
+      visible.
+  [ ] Is a clarification the user CANNOT answer a product failure?
+      Asking a novice for a cost-centre code is a real usability failure, not
+      a success.
+
+
+================================================================================
+PART 2 - THE EVALUATOR
+================================================================================
+
+validator.py deliberately stops short of judging the product ("does not score
+product quality - that is a later component"). This is that component.
+
+THREE SEPARATE LAYERS - conflating them is how eval systems become unfalsifiable
+  1. Harness validity   - was the simulation trustworthy?   [EXISTS]
+  2. Outcome class      - what kind of interaction was it?  [EXISTS]
+  3. Answer quality     - was the product actually right?   [MISSING]
+
+  Layer 3 must be VOID when layer 1 fails. Scoring answers from a run where the
+  persona misbehaved is noise.
+
+GROUND TRUTH - four sources
+  a. Cross-repeat consistency        generic, FREE, strongest available
+       Every question already runs N times with different seeds and we never
+       compare the results. Different answers to the same question across
+       repeats = defect signal needing NO ground truth. Data is already sitting
+       in the DB unused.   <- build this first
+  b. Groundedness vs returned data   needs artifacts
+       Does the reply claim more than the rows support? Catches hallucination.
+  c. Programmatic oracle             product-specific
+       For Insight we CAN compute truth via a reference query. Belongs in the
+       product pack, not the generic layer.
+  d. LLM judge on reply vs intent    generic, weakest
+       Catches non-answers and obvious nonsense.
+
+ARCHITECTURAL CONFLICT TO RESOLVE FIRST
+  adapters/base.py states: "No code outside adapters/ may read a named key from
+  AdapterResponse.artifacts."
+  A groundedness evaluator needs artifacts["rows"] and artifacts["sql"], so the
+  obvious implementation VIOLATES the architecture's own boundary.
+  Two clean resolutions:
+    - product pack supplies its own evaluator (allowed to read its own artifacts)
+    - AdapterResponse gains a generic, standard-shaped "evidence" field
+  Lean: the evidence field. Keeps the generic evaluator generic.
+
+RUBRIC
+  Per dimension: PASS / PARTIAL / FAIL plus a REQUIRED EVIDENCE QUOTE.
+  Not 1-10 scales - they cluster at 7-8 and are not comparable across runs.
+
+    - Faithfulness            reply claims only what the evidence supports
+    - Interpretation fidelity answered the question ASKED, or a nearby different
+                              one? (catches silent scope drift)
+    - Completeness            whole intent, or part?
+    - Transparency of limits  refused_clearly belongs HERE, not in the validator
+    - Actionability for THIS persona    <- the differentiator
+                              "sum(transaction_amount_usd): 2589.2" is correct
+                              and useless to a novice. Nothing else on the market
+                              measures answer quality relative to WHO ASKED.
+
+NON-NEGOTIABLE
+  [ ] Golden set: small set of human-labelled conversations, so the EVALUATOR'S
+      OWN accuracy can be measured. Without it the evaluator is unfalsifiable.
+      We already learned this session what an unfalsifiable green signal costs -
+      the blank-transcript bug hid behind passing tests for the whole project.
+      Build it ALONGSIDE the evaluator, not after.
+  [ ] Separate model_evaluator role, so a bug in one model does not correlate.
+  [ ] Evaluation failures recorded as evaluation_failed, never as a pass.
+  [ ] Re-runnable against stored runs without replaying conversations.
+      Evaluator iteration is cheap; conversation replay is expensive.
+
+
+================================================================================
+PART 3 - GENERIC VS PRODUCT-SPECIFIC     [do last]
+================================================================================
+
+Architecture is already generic (Adapter protocol, YAML profiles, metric
+registry with requires). The leaks are all concrete, all in cli.py:
+
+    line 105   if adapter not in {"mock", "insight"}     hardcoded set
+    line 111   direct InsightAdapter() / MockAdapter()   construction
+    lines 133-134  validate hardcodes insight_profile.yaml and
+                   insight_capability.yaml, so you CANNOT validate a run of
+                   any other product
+  (line numbers as of 2026-09-16, may drift)
+
+PRODUCT PACK - the unit to introduce
+  A manifest bundling: profile + capability spec + adapter entry point
+  + optional oracle + optional product-specific metrics + optional past-queries.
+  Registered by name so "--adapter my_product" works without editing the CLI.
+
+  Generic owns:  personas, generation, persona agent, moderator, runner,
+                 validator, generic evaluator dimensions, universal metrics
+  Pack owns:     profile, capability spec, adapter, oracle, product metrics
+
+CAVEAT WORTH INTERNALISING
+  The domain-grounding fix proved generic-platform quality depends on
+  product-pack AUTHORING quality - a vague profile produced hallucinated
+  questions (invoices, accounts, subscription plans that exist nowhere in the
+  data). Packs need an authoring checklist and a lint step ("does your profile
+  name the domain concretely?"), or every new product repeats that failure.
+
+
+================================================================================
+SEQUENCING
+================================================================================
+
+  1. Clarification handling
+       Smallest change, and it is actively corrupting cleanup_rate right now.
+       Needs the mock CLARIFY path to be testable.
+
+  2. Cross-repeat consistency metric
+       High signal, no ground truth needed, no new prompts, data already
+       collected.
+
+  3. Evaluator layer 3
+       After the evidence-boundary decision. Golden set built alongside.
+
+  4. Product-pack refactor
+       Last. Steps 1-3 will show what actually needs to be pluggable.
+       Refactoring for generality before there is a second product is how you
+       get the wrong abstraction.
+
+
+================================================================================
+BLOCKING DECISIONS (answer these before starting)
+================================================================================
+
+  [ ] Do clarification turns consume patience?
+  [ ] Artifacts boundary: generic "evidence" field on AdapterResponse, or
+      pack-owned evaluator?

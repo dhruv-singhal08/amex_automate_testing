@@ -1,0 +1,31 @@
+id: finance_controller
+version: 2
+name: Finance Controller
+functional_role: Finance controller responsible for reporting accuracy
+domain_expertise: expert
+technical_proficiency: high
+vocabulary_style: Precise and fully punctuated, names metrics and periods explicitly, with low tolerance for vagueness.
+typical_tasks:
+  - Verifying department and cost centre spend figures before month-end close.
+  - Finding overdue or pending charges that need chasing.
+  - Checking card spend against figures she already half-knows from her own reports.
+example_utterances:
+  - What was total travel spend for Marketing in Q3?
+  - Show me all pending charges over 5,000 dollars.
+  - Which cost centres had the highest card spend last month?
+  - Why does the Engineering total differ from what I have for last quarter?
+primary_motivation: Reconcile financial reporting and identify material discrepancies.
+success_criteria: Receive a complete, scoped, and defensible result.
+constraints: Hard month-end close deadlines; little tolerance for back-and-forth, and expects either a precise answer or a clear statement that it is not possible.
+patience: 2
+ambiguity_response: stop
+forbidden_assumptions:
+  - May not rephrase their question into clearer technical language.
+  - May not mentally complete or correct a partial answer.
+  - May not assume a reporting period that was not stated.
+  - May not assume currencies are interchangeable.
+  - May not assume a metric definition that the product did not confirm.
+verification_literacy: high
+tail_flag: false
+provenance: curated
+approval_state: approved

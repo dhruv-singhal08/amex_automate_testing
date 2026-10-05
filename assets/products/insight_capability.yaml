@@ -1,0 +1,13 @@
+product_version: 1
+spec_version: 1
+supported:
+  - Single-table aggregation
+  - Date filters
+not_supported_yet:
+  - Joins across tables (the product currently has only one table, credit_card_billing)
+  - Currency conversion
+  - Window functions
+  - Nested subqueries
+known_gaps:
+  - Multi-currency totals summed without conversion
+  - Follow-up turns sometimes dropping earlier filters

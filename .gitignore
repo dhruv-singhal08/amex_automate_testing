@@ -1,0 +1,6 @@
+.venv
+.env
+*.db
+runs/*.json
+runs/*.csv
+__pycache__

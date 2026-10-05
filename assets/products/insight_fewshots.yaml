@@ -1,0 +1,126 @@
+# PLACEHOLDER few-shot bank - every entry is marked source: placeholder.
+# These were written against mock_product/data/schema.sql, not taken from a real
+# validated query log. They have NOT been executed or reviewed. Replace them with
+# real validated NL->SQL pairs before trusting any reference generated from them.
+#
+# Privileged: these reach the question generator, reference validator and judge
+# only. They must never reach the persona agent, the adapter, or any
+# product-facing message.
+examples:
+  - id: fs-001
+    question: How much did we spend in total last month?
+    sql: >
+      SELECT SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      WHERE transaction_date >= date_trunc('month', CURRENT_DATE - INTERVAL 1 MONTH)
+        AND transaction_date < date_trunc('month', CURRENT_DATE)
+    tables: [credit_card_billing]
+    notes: Simple aggregate over a relative month window. Uses transaction_date, not billing_cycle_month.
+    source: placeholder
+
+  - id: fs-002
+    question: What is the total spend by department?
+    sql: >
+      SELECT department, SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      GROUP BY department
+      ORDER BY total_spend_usd DESC
+    tables: [credit_card_billing]
+    notes: Grouped aggregate with no time filter. Grain is one row per department.
+    source: placeholder
+
+  - id: fs-003
+    question: Which merchants did Engineering spend the most with?
+    sql: >
+      SELECT merchant_name, SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      WHERE department = 'Engineering'
+      GROUP BY merchant_name
+      ORDER BY total_spend_usd DESC
+      LIMIT 10
+    tables: [credit_card_billing]
+    notes: Top-N pattern. Filter on a single department, rank merchants by spend.
+    source: placeholder
+
+  - id: fs-004
+    question: How many charges are still pending?
+    sql: >
+      SELECT COUNT(*) AS pending_charges
+      FROM credit_card_billing
+      WHERE payment_status = 'Pending'
+    tables: [credit_card_billing]
+    notes: Count with a status filter. payment_status values are Paid, Pending, Overdue.
+    source: placeholder
+
+  - id: fs-005
+    question: Show me all overdue charges over 1000 dollars.
+    sql: >
+      SELECT transaction_id, transaction_date, cardholder_name, department,
+             merchant_name, transaction_amount_usd
+      FROM credit_card_billing
+      WHERE payment_status = 'Overdue'
+        AND transaction_amount_usd > 1000
+      ORDER BY transaction_amount_usd DESC
+    tables: [credit_card_billing]
+    notes: Row-level lookup with two filters. No aggregation; grain is one row per transaction.
+    source: placeholder
+
+  - id: fs-006
+    question: Compare travel spend between Sales and Marketing this year.
+    sql: >
+      SELECT department, SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      WHERE department IN ('Sales', 'Marketing')
+        AND merchant_category IN ('Airlines', 'Hotels')
+        AND transaction_date >= date_trunc('year', CURRENT_DATE)
+      GROUP BY department
+    tables: [credit_card_billing]
+    notes: Comparison across two departments. Travel is expressed as merchant_category in Airlines/Hotels.
+    source: placeholder
+
+  - id: fs-007
+    question: What is our monthly spend trend this year?
+    sql: >
+      SELECT billing_cycle_month, SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      WHERE transaction_date >= date_trunc('year', CURRENT_DATE)
+      GROUP BY billing_cycle_month
+      ORDER BY billing_cycle_month
+    tables: [credit_card_billing]
+    notes: Trend over time. Grain is one row per billing cycle month, ordered chronologically.
+    source: placeholder
+
+  - id: fs-008
+    question: Who are the top five cardholders by spend?
+    sql: >
+      SELECT cardholder_name, SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      GROUP BY cardholder_name
+      ORDER BY total_spend_usd DESC
+      LIMIT 5
+    tables: [credit_card_billing]
+    notes: Top-N over people. Explicit LIMIT because the question names a number.
+    source: placeholder
+
+  - id: fs-009
+    question: How is spend split across card types in EMEA?
+    sql: >
+      SELECT card_type,
+             COUNT(*) AS transaction_count,
+             SUM(transaction_amount_usd) AS total_spend_usd
+      FROM credit_card_billing
+      WHERE region = 'EMEA'
+      GROUP BY card_type
+    tables: [credit_card_billing]
+    notes: Distribution across a categorical dimension, filtered to one region.
+    source: placeholder
+
+  - id: fs-010
+    question: What was the average transaction size for software purchases?
+    sql: >
+      SELECT AVG(transaction_amount_usd) AS average_transaction_usd
+      FROM credit_card_billing
+      WHERE merchant_category = 'Software'
+    tables: [credit_card_billing]
+    notes: Average rather than sum. Shows that "software" maps to merchant_category, not merchant_name.
+    source: placeholder

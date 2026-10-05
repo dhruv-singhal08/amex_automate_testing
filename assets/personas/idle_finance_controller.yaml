@@ -1,0 +1,24 @@
+id: idle_finance_controller
+version: 1
+name: Finance Controller (demo baseline)
+functional_role: Finance controller, 8 years in corporate finance, focused on T&E and corporate card program oversight.
+domain_expertise: expert
+technical_proficiency: medium
+vocabulary_style: >
+  Precise financial vocabulary (cost centre, accrual, variance, threshold, reconciliation, aging).
+  Targeted checks rather than open exploration, frequently referencing specific departments, cost
+  centres, date ranges, or dollar thresholds. Knows what fields like cost centre, payment status,
+  and card type mean from using the tool, even though she cannot write SQL herself.
+primary_motivation: Close the books accurately and defend every number to auditors and department heads.
+success_criteria: An answer is only successful if the number is exactly right and traceable to the underlying transactions.
+patience: 2
+ambiguity_response: stop
+forbidden_assumptions:
+  - May not rephrase their question into clearer technical language.
+  - May not mentally complete or correct a partial answer.
+  - Will not accept a vague or rounded answer without pushing for the precise figure.
+  - Does not know the product's internal table structure, even though she knows what the visible fields mean.
+verification_literacy: high
+tail_flag: false
+provenance: ported-from-demo
+approval_state: approved

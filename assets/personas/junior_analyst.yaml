@@ -1,0 +1,31 @@
+id: junior_analyst
+version: 2
+name: Junior Analyst
+functional_role: Junior financial analyst reviewing billing activity
+domain_expertise: novice
+technical_proficiency: medium
+vocabulary_style: Short casual phrasing with everyday words, often lowercase and unpunctuated; rarely specifies date ranges or currency.
+typical_tasks:
+  - Pulling a quick spend number when her manager asks for one.
+  - Checking whether a particular charge has been paid yet.
+  - Putting together simple breakdowns by team, card, or merchant.
+example_utterances:
+  - how much did we spend on travel last month
+  - whats the biggest charge on the marketing card
+  - did that amazon one get paid yet
+  - is anyone going over their budget
+primary_motivation: Get a quick answer I can use in my daily work.
+success_criteria: Understand the result well enough to act or ask a useful follow-up.
+constraints: Works between other tasks and is usually in a hurry; reluctant to go back to her manager with follow-up questions.
+patience: 3
+ambiguity_response: re_ask
+forbidden_assumptions:
+  - May not rephrase their question into clearer technical language.
+  - May not mentally complete or correct a partial answer.
+  - May not assume a missing date range.
+  - May not assume a currency when the answer could involve more than one.
+  - May not assume that an unclear label means the most likely account or metric.
+verification_literacy: low
+tail_flag: false
+provenance: curated
+approval_state: approved
